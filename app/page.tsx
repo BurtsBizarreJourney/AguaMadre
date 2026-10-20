@@ -1,7 +1,7 @@
-import Hero from "./components/Hero";
-import ScrollPinReveal from "./components/ScrollPinReveal";
-import AnimatedToggle from "./components/AnimatedToggle";
-import RevealCards from "./components/RevealCards";
+import Hero from "./content/Hero";
+import ScrollPinReveal from "./content/ScrollPinReveal";
+import AnimatedToggle from "./content/AnimatedToggle";
+import RevealCards from "./content/RevealCards";
 
 export default function Home() {
   return (
@@ -10,21 +10,35 @@ export default function Home() {
 
       <section className="section" id="reveal">
         <div className="container section-head">
-          <p className="eyebrow">Reemplaza este texto</p>
-          <h2>Una secuencia controlada por el scroll.</h2>
+          <p className="eyebrow">The Source</p>
+          <h2>Born 1,200m above sea level.</h2>
           <p>
-            Esta sección se queda fija mientras avanzas el scroll, y las
-            imágenes van cambiando según tu progreso — la misma técnica
-            detrás de la mayoría de las páginas de producto &ldquo;cinemáticas&rdquo;.
+            From a single protected aquifer to your glass. Scroll to trace the journey of every drop.
           </p>
         </div>
         <ScrollPinReveal
-          scrollLengthVh={280}
+          scrollLengthVh={400}
           frames={[
-            { alt: "Primer fotograma de ejemplo", caption: "Fotograma 1 — reemplaza con tu imagen" },
-            { alt: "Segundo fotograma de ejemplo", caption: "Fotograma 2 — reemplaza con tu imagen" },
-            { alt: "Tercer fotograma de ejemplo", caption: "Fotograma 3 — reemplaza con tu imagen" },
-            { alt: "Cuarto fotograma de ejemplo", caption: "Fotograma 4 — reemplaza con tu imagen" },
+            { 
+              alt: "Mountain spring source", 
+              caption: "Born 1,200m above sea level.",
+              src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2940&auto=format&fit=crop"
+            },
+            { 
+              alt: "Wild botanicals", 
+              caption: "Infused with wild-harvested botanicals.",
+              src: "https://images.unsplash.com/photo-1595150352785-0a3e38298789?q=80&w=2940&auto=format&fit=crop"
+            },
+            { 
+              alt: "Bottling process", 
+              caption: "Cold-bottled. Never pasteurized.",
+              src: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?q=80&w=2940&auto=format&fit=crop"
+            },
+            { 
+              alt: "Final product bottle", 
+              caption: "Agua Madre. Taste the origin.",
+              src: "https://images.unsplash.com/photo-1608885898957-a559228e8749?q=80&w=2940&auto=format&fit=crop"
+            },
           ]}
         />
       </section>
@@ -32,24 +46,25 @@ export default function Home() {
       <section className="section section-alt">
         <div className="container">
           <div className="section-head">
-            <p className="eyebrow">Cómo funciona</p>
-            <h2>Un toggle con transición animada.</h2>
+            <p className="eyebrow">The Variants</p>
+            <h2>Find your balance.</h2>
+            <p>Two textures. One uncompromising source. Choose your experience.</p>
           </div>
           <AnimatedToggle
             states={[
               {
-                key: "estado-a",
-                label: "Estado A",
-                title: "Primer estado",
+                key: "still",
+                label: "Still",
+                title: "Silent & Smooth",
                 description:
-                  "Describe aquí el primer escenario de tu producto o servicio.",
+                  "Zero bubbles. Pure, unadulterated mineral water with a crisp, clean finish. Best served chilled alongside a meal.",
               },
               {
-                key: "estado-b",
-                label: "Estado B",
-                title: "Segundo estado",
+                key: "sparkling",
+                label: "Sparkling",
+                title: "Bright & Effervescent",
                 description:
-                  "Describe aquí el segundo escenario — qué cambia y por qué importa.",
+                  "Delicately carbonated to lift the botanicals. Refreshing, lively, and perfect for a midday reset.",
               },
             ]}
           />
@@ -59,22 +74,22 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <p className="eyebrow">Beneficios</p>
-            <h2>Tarjetas que aparecen al hacer scroll.</h2>
+            <p className="eyebrow">The Difference</p>
+            <h2>Nothing to hide.</h2>
           </div>
           <RevealCards
             cards={[
               {
-                title: "Primer beneficio",
-                description: "Explica aquí el primer punto fuerte de tu oferta.",
+                title: "Mineral Spring Water",
+                description: "Sourced from a single protected aquifer. Naturally filtered through volcanic rock for over 30 years.",
               },
               {
-                title: "Segundo beneficio",
-                description: "Explica aquí el segundo punto fuerte de tu oferta.",
+                title: "Wild Botanicals",
+                description: "Hand-foraged rosemary, elderflower, and citrus peel. No extracts, no essences.",
               },
               {
-                title: "Tercer beneficio",
-                description: "Explica aquí el tercer punto fuerte de tu oferta.",
+                title: "Zero Additives",
+                description: "No sugar, no sweeteners, no preservatives. Just water and what grows beside it.",
               },
             ]}
           />

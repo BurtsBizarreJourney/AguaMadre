@@ -9,22 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 type Frame = {
   alt: string;
   caption?: string;
+  src?: string; // Added image source
 };
 
 type ScrollPinRevealProps = {
   frames: Frame[];
-  /** How much scroll distance (in viewport heights) the whole sequence takes. */
   scrollLengthVh?: number;
 };
 
-/**
- * The "pin a panel and scrub through content as the user scrolls" effect.
- * The section is pinned in place for `scrollLengthVh` of scroll distance,
- * while GSAP crossfades between `frames` based on scroll progress.
- *
- * Swap the placeholder divs for <Image> / <video> and this is the same
- * technique behind most "scrollytelling" product reveals.
- */
 export default function ScrollPinReveal({
   frames,
   scrollLengthVh = 300,
@@ -40,7 +32,6 @@ export default function ScrollPinReveal({
       const els = frameRefs.current.filter(Boolean) as HTMLDivElement[];
       if (els.length === 0) return;
 
-      // Start with only the first frame visible.
       gsap.set(els, { autoAlpha: 0 });
       gsap.set(els[0], { autoAlpha: 1 });
 
@@ -55,7 +46,6 @@ export default function ScrollPinReveal({
         },
       });
 
-      // Crossfade sequentially through every frame after the first.
       els.slice(1).forEach((el) => {
         tl.to(els, { autoAlpha: 0, duration: 0.4 }, "+=0.3");
         tl.to(el, { autoAlpha: 1, duration: 0.4 }, "<");
@@ -77,7 +67,15 @@ export default function ScrollPinReveal({
             className="pin-reveal-frame"
             role="img"
             aria-label={frame.alt}
+            style={frame.src ? {
+              backgroundImage: `url('${frame.src}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            } : {}}
           >
+            {/* Overlay to ensure text is readable over images */}
+            {frame.src && <div className="pin-reveal-overlay" />}
+            
             {frame.caption && (
               <p className="pin-reveal-caption">{frame.caption}</p>
             )}
