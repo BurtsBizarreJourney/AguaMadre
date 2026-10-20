@@ -1,3 +1,8 @@
+import Hero from "./components/Hero";
+import ScrollPinReveal from "./components/ScrollPinReveal";
+import AnimatedToggle from "./components/AnimatedToggle";
+import RevealCards from "./components/RevealCards";
+
 import React from 'react';
 import { Phone, Droplets, Leaf, Shield, Truck, Sparkles } from 'lucide-react';
 
