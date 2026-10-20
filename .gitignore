@@ -27,3 +27,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.vsidx
+/.vs
+/.vs
+/.vs
+/.vs

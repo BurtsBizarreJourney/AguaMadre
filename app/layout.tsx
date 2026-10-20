@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Manrope } from "next/font/google";
+import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 
 const sora = Sora({
