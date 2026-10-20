@@ -1,7 +1,7 @@
-import Hero from "./content/Hero";
-import ScrollPinReveal from "./content/ScrollPinReveal";
-import AnimatedToggle from "./content/AnimatedToggle";
-import RevealCards from "./content/RevealCards";
+import Hero from "./components/Hero";
+import ScrollPinReveal from "./components/ScrollPinReveal";
+import AnimatedToggle from "./components/AnimatedToggle";
+import RevealCards from "./components/RevealCards";
 
 export default function Home() {
   return (
